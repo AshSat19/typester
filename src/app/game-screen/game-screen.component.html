@@ -1,0 +1,53 @@
+<div [ngClass]="{ 'hideIt': (!gameOn) }">
+  <app-timer [time]=gameTime class="d-block mx-auto"></app-timer>
+  <div class="">
+    <h1 class="jumbotron display-4 text-center text-uppercase" style="margin-top: 2rem;">
+      {{ currentWord }}
+    </h1>
+    <form  [formGroup]="answerForm" (ngSubmit)="checkAnswer()">
+      <div class="form-group">
+        <input id="answer" type="text" formControlName="answer" class="form-control w-100 text-uppercase text-center" autofocus>
+        <button type="submit" class="btn btn-dark btn-lg text-center w-100 text-uppercase mt-2">submit</button>
+      </div>
+    </form>
+  </div>
+  <div id="score" class="rounded-circle mx-auto d-block">
+    <p class="lead text-center">Score</p>
+    <h2 class="display-1 text-center w-100">
+      {{ score }}
+    </h2>
+  </div>
+</div>
+
+<h1 *ngIf="gameOver" class="jumbotron text-center text-uppercase" style="margin-top: 2rem; color: red;">
+  time up !
+</h1>
+
+<h1 *ngIf="gameDone" class="jumbotron text-center text-uppercase" style="margin-top: 2rem; color: green;">
+  You beat the clock !
+</h1>
+
+<div *ngIf="gameDone || gameOver" class="container">
+  <table class="table table-borderless table-responsive w-100">
+    <tbody>
+      <tr>
+        <td class="text-left w-50">Score</td>
+        <td class="text-right w-50">{{ score }}</td>
+        <td class="text-right" style="width: 50%">30</td>
+      </tr>
+      <tr>
+        <td class="text-left w-50">Time Bonus</td>
+        <td class="text-right w-50">{{ remainingTime }}</td>
+      </tr>
+      <tr>
+        <td class="text-left w-50"><p class="lead">Time Bonus</p></td>
+        <td class="text-right w-50"><p class="lead">{{ remainingTime + score }}</p></td>
+      </tr>
+    </tbody>
+  </table>
+  <button 
+  class="btn btn-primary m-2 btn-lg text-uppercase w-100 d-inline-table align-middle"
+  (click)="done()">
+    return to main menu
+  </button>
+</div>

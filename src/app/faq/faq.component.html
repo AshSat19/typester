@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron">
+        <h2 class="text-center">HELP</h2>
+      </div>
+      <div *ngFor="let faq of faqs" style="margin-top: 2rem;">
+        <div style="padding: 0.25rem">
+          <h4 class="text-uppercase">
+            {{ faq.qn }}
+          </h4>
+        </div>
+      
+        <div style="background-color: gray; padding: 0.5rem">
+          <p>
+            {{ faq.an }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

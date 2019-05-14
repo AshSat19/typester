@@ -1,0 +1,16 @@
+.word {
+    text-align: center;
+    margin: 5rem;
+}
+
+app-timer {
+    margin-top: 2rem;
+}
+
+#score {
+    margin-top: 5rem; 
+}
+
+.hideIt {
+    display: none;
+}

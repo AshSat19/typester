@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron">
+        <h2 class="text-center">SETTINGS</h2>
+      </div>
+      <form [formGroup]="settingsForm">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <div style="float: left; width: 60%;">
+              Quick Play Game Duration
+            </div>
+            <div style="float: right; width: 40%;">
+              <div class="form-group" style="float: right;">
+                <input type="number" value="{{quickPlayDuration}}" id="quickPlayTime" class="form-control d-inline-block text-center" style="width: 75%;">
+                <label for="quickPlayTime" class="d-inline-block m-1">s</label>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <button class="btn btn-dark text-uppercase w-100 mt-3" type="submit">save</button>
+      </form>
+    </div>
+  </div>
+</div>

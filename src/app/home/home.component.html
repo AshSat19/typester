@@ -1,0 +1,64 @@
+<div style="height: 40%; margin-top: 3rem;">
+  <h1 class="display-3 text-center">
+    Typester
+  </h1>
+  <p class="lead text-center">
+    How fast on the keyboard are you ?
+  </p>
+</div>
+
+<div *ngIf="mainMenu" style="height: 60%;">
+  <button 
+  class="btn btn-primary m-2 btn-lg text-uppercase w-100 d-inline-table align-middle"
+  (click)="quickPlay()">
+    <span><i class="fa fa-fast-forward" style="font-size: 1.5rem; margin-right: 10px"></i></span>
+    quick play
+  </button>
+  <button 
+  class="btn btn-secondary m-2 btn-lg text-uppercase w-100 d-inline-table align-middle" (click)="getDifficulty()">
+    <span><i class="fa fa-gamepad" style="font-size: 1.5rem; margin-right: 10px"></i></span>
+    Game Modes
+  </button>
+  <button 
+  class="btn btn-primary m-2 btn-lg text-uppercase w-100 d-inline-table align-middle"
+  routerLink="/faq">
+    <span><i class="fa fa-question" style="font-size: 1.5rem; margin-right: 10px"></i></span>
+    help
+  </button>
+  <button 
+  class="btn btn-secondary m-2 btn-lg text-uppercase w-100 d-inline-table align-middle"
+  routerLink="/settings">
+    <span><i class="fa fa-cogs" style="font-size: 1.5rem; margin-right: 10px"></i></span>
+    Settings
+  </button>
+</div>
+
+<div *ngIf="difficultyLevels" style="height: 60%; margin-top: 40%;">
+  <button class="btn btn-success m-2 btn-lg text-uppercase w-100 d-inline-table align-middle"
+  (click)="getGameModes('easy')">
+    Easy
+  </button>
+  <button class="btn btn-warning m-2 btn-lg text-uppercase w-100 d-inline-table align-middle"
+  (click)="getGameModes('medium')">
+    medium
+  </button>
+  <button class="btn btn-danger m-2 btn-lg text-uppercase w-100 d-inline-table align-middle"
+  (click)="getGameModes('hard')">
+    hard
+  </button>
+</div>
+
+<div *ngIf="gameModes" style="height: 60%; margin-top: 40%;">
+  <button class="btn btn-light m-2 btn-lg text-uppercase w-100 d-inline-table align-middle"
+  (click)="pickedMode(0)">
+    30 seconds
+  </button>
+  <button class="btn btn-light m-2 btn-lg text-uppercase w-100 d-inline-table align-middle"
+  (click)="pickedMode(1)">
+    1 minute
+  </button>
+  <button class="btn btn-light m-2 btn-lg text-uppercase w-100 d-inline-table align-middle"
+  (click)="pickedMode(2)">
+    2 minutes
+  </button>
+</div>
